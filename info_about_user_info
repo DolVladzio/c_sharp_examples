@@ -26,10 +26,13 @@ while (true)
         Console.Clear();
     }
 
-    // цикл по заміні значенню паролів на *
-    for (int x = 0; x < user_password.Length; x++)
+    // процес по заміні значенню паролів на * copied password array
+    /*string[] user_password_copy = new string[user_quantity];
+    user_password_copy = user_password;
+    
+    for (int x = 0; x < user_password_copy.Length; x++)
     {
-        user_password[x] = new string('*', user_password[x].Length);
+        user_password_copy[x] = new string('*', user_password_copy[x].Length);
     }
 
     for (int j = 0; j < user_quantity; j++)
@@ -37,6 +40,46 @@ while (true)
         Console.WriteLine($"\nName: {user_name[j]}");
         Console.WriteLine($"Nick_name: {user_nick_name[j]}");
         Console.WriteLine($"Password: {user_password[j]}");
+    }*/
+
+    Console.ReadKey();
+    Console.Clear();
+
+
+    // Log in
+    Console.WriteLine("Sign in to your account");
+
+    for (int l = 0; l < user_quantity; l++)
+    {
+        Console.WriteLine($"\nUser: {user_name[l]}");
+    }
+
+    Console.Write("\nSelect an account: ");
+    string user_choise_name = Console.ReadLine();
+
+    for (int f = 0; f < user_name.Length; f++)
+    {
+        if (user_choise_name == user_name[f])
+        {
+            Console.WriteLine($"User: {user_choise_name} here");
+            
+            Console.Write($"{user_choise_name} password: ");
+            string user_choise_password = Console.ReadLine();
+
+            for (int r = f; r < user_password.Length; r++)
+            {
+                if (user_choise_password == user_password[r])
+                {
+                    Console.WriteLine($"\nWelcome: {user_choise_name}!)");
+                    break;
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("Opps...we didn'd find his/her");
+            continue;
+        }
     }
 
     Console.ReadKey();
