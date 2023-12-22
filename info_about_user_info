@@ -1,0 +1,45 @@
+(Program about user_info(name/nick_name/password))
+
+while (true)
+{
+    Console.WriteLine("Hello, I'm Console Bot!)");
+    Console.Write("How many users will be connect: ");
+    int user_quantity = Convert.ToInt32(Console.ReadLine());
+
+    string[] user_name = new string[user_quantity];
+    string[] user_nick_name = new string[user_quantity];
+    string[] user_password = new string[user_quantity];
+
+    for (int i = 0; i < user_quantity; i++)
+    {
+        Console.WriteLine("\nRegistration form!");
+
+        Console.Write("\nUser's name: ");
+        user_name[i] = Console.ReadLine();
+        
+        Console.Write("User's nick_name: ");
+        user_nick_name[i] = Console.ReadLine();
+        
+        Console.Write("User's password: ");
+        user_password[i] = Console.ReadLine();
+
+        Console.Clear();
+    }
+
+    // цикл по заміні значенню паролів на *
+    for (int x = 0; x < user_password.Length; x++)
+    {
+        user_password[x] = new string('*', user_password[x].Length);
+        Console.WriteLine($"Password: {user_password[x]}");
+    }
+
+    for (int j = 0; j < user_quantity; j++)
+    {
+        Console.WriteLine($"\nName: {user_name[j]}");
+        Console.WriteLine($"Nick_name: {user_nick_name[j]}");
+        Console.WriteLine($"Password: {user_password[j]}");
+    }
+
+    Console.ReadKey();
+    Console.Clear();
+}
