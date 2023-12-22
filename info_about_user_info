@@ -30,7 +30,6 @@ while (true)
     for (int x = 0; x < user_password.Length; x++)
     {
         user_password[x] = new string('*', user_password[x].Length);
-        Console.WriteLine($"Password: {user_password[x]}");
     }
 
     for (int j = 0; j < user_quantity; j++)
