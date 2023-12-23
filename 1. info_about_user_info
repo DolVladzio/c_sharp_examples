@@ -10,16 +10,18 @@ while (true)
     string[] user_nick_name = new string[user_quantity];
     string[] user_password = new string[user_quantity];
 
+    Console.Clear();
+    
     for (int i = 0; i < user_quantity; i++)
     {
-        Console.WriteLine("\nRegistration form!");
+        Console.WriteLine("Registration form!");
 
         Console.Write("\nUser's name: ");
         user_name[i] = Console.ReadLine();
-        
+
         Console.Write("User's nick_name: ");
         user_nick_name[i] = Console.ReadLine();
-        
+
         Console.Write("User's password: ");
         user_password[i] = Console.ReadLine();
 
@@ -27,21 +29,16 @@ while (true)
     }
 
     // процес по заміні значенню паролів на * copied password array
-    /*string[] user_password_copy = new string[user_quantity];
-    user_password_copy = user_password;
     
-    for (int x = 0; x < user_password_copy.Length; x++)
-    {
-        user_password_copy[x] = new string('*', user_password_copy[x].Length);
-    }
 
     for (int j = 0; j < user_quantity; j++)
     {
         Console.WriteLine($"\nName: {user_name[j]}");
         Console.WriteLine($"Nick_name: {user_nick_name[j]}");
         Console.WriteLine($"Password: {user_password[j]}");
-    }*/
+    }
 
+    Console.WriteLine("\nPress ENTER to ocontinue)");
     Console.ReadKey();
     Console.Clear();
 
@@ -61,6 +58,8 @@ while (true)
     {
         if (user_choise_name == user_name[f])
         {
+            Console.Clear();
+
             Console.WriteLine($"User: {user_choise_name} here");
             
             Console.Write($"{user_choise_name} password: ");
