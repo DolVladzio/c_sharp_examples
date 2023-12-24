@@ -57,7 +57,9 @@ while (true)
         {
             Console.Clear();
 
-            Console.WriteLine($"User: {user_choise_name} here");
+            Console.WriteLine("Sign in to your account");
+
+            Console.WriteLine($"\nUser: {user_choise_name} here");
 
             Console.Write($"{user_choise_name} password: ");
             string user_choise_password = Console.ReadLine();
@@ -66,8 +68,9 @@ while (true)
             {
                 if (user_choise_password == user_password[r])
                 {
-                    Console.WriteLine($"\nWelcome: {user_choise_name}!)");
-                    break;
+                    Console.Clear();    
+
+                    Console.WriteLine($"Welcome: {user_choise_name}!)");
                 }
             }
         }
