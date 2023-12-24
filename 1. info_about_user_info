@@ -11,7 +11,7 @@ while (true)
     string[] user_password = new string[user_quantity];
 
     Console.Clear();
-    
+
     for (int i = 0; i < user_quantity; i++)
     {
         Console.WriteLine("Registration form!");
@@ -27,9 +27,6 @@ while (true)
 
         Console.Clear();
     }
-
-    // процес по заміні значенню паролів на * copied password array
-    
 
     for (int j = 0; j < user_quantity; j++)
     {
@@ -61,7 +58,7 @@ while (true)
             Console.Clear();
 
             Console.WriteLine($"User: {user_choise_name} here");
-            
+
             Console.Write($"{user_choise_name} password: ");
             string user_choise_password = Console.ReadLine();
 
