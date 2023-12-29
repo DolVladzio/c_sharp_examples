@@ -1,0 +1,238 @@
+(Program about shopping)
+
+while (true)
+{
+    string[] cereals_part = {"Pasta","Porridge","Buckwheat"};
+    int[] cereal_quantity = new int[cereals_part.Length];
+
+    string[] fruit_part = { "Apple","Banana","Orange"};
+    int[] fruit_quantity = new int[fruit_part.Length];
+
+    string[] drinks_part = { "Pepsi","Sprite","Cola"};
+    int[] drinks_quantity = new int[drinks_part.Length];
+
+    Random random = new Random();
+
+    Console.WriteLine("Hello, it's console shopping program)");
+    Console.WriteLine("Let's go shopping)");
+
+    Clear_moment();
+
+    Console.WriteLine("Here are the products: ");
+    Console.WriteLine();
+
+    // =================================================================//
+
+    // $_виведення всіх продуктів(cereal)
+    for (int i = 0; i < cereals_part.Length; i++)
+    {
+        cereal_quantity[i] = random.Next(1, 10);
+
+        Console.WriteLine($"$_{cereals_part[i]} - {cereal_quantity[i]} quantity");
+        Console.WriteLine();
+
+        Delay_700();
+    }
+
+    Notation();
+
+    Console.Write("What do you want: ");
+    string user_cereal_choise = Console.ReadLine();
+
+    Console.Write("How much do you want: ");
+    int user_cereal_quantity = Convert.ToByte(Console.ReadLine());
+
+    // $_пошук чи існує такий товар(cereals)
+    for (int x = 0; x < cereals_part.Length; x++)
+    {
+        if (user_cereal_choise == cereals_part[x])
+        {
+            Console.WriteLine("Great, let's continue");
+            break;
+        }
+        else if (user_cereal_choise != cereals_part[x])
+        {
+            continue;
+        }
+        else
+        {
+            Console.Write("What do you want: ");
+            user_cereal_choise = Console.ReadLine();
+        }
+    }
+
+    Clear_moment();
+    // =================================================================//
+
+
+    // $_виведення всіх продуктів(fruit)
+    for (int i = 0; i < fruit_part.Length; i++)
+    {
+        fruit_quantity[i] = random.Next(1, 10);
+
+        Console.WriteLine($"$_{fruit_part[i]} - {fruit_quantity[i]} quantity");
+        Console.WriteLine();
+
+        Delay_700();
+    }
+
+    Notation();
+
+    Console.Write("What do you want: ");
+    string user_fruit_choise = Console.ReadLine();
+
+    Console.Write("How much do you want: ");
+    int user_fruit_quantity = Convert.ToByte(Console.ReadLine());
+
+    // $_пошук чи існує такий товар(fruit)
+    for (int x = 0; x < fruit_part.Length; x++)
+    {
+        if (user_fruit_choise == fruit_part[x])
+        {
+            Console.WriteLine("Great, let's continue");
+            break;
+        }
+        else if (user_fruit_choise != fruit_part[x])
+        {
+            continue;
+        }
+        else
+        {
+            Console.Write("What do you want: ");
+            user_fruit_choise = Console.ReadLine();
+        }
+    }
+
+    Clear_moment();
+    // =================================================================//
+
+    // $_виведення всіх продуктів(drinks)
+    for (int i = 0; i < drinks_part.Length; i++)
+    {
+        drinks_quantity[i] = random.Next(1, 10);
+
+        Console.WriteLine($"$_{drinks_part[i]} - {drinks_quantity[i]} quantity");
+        Console.WriteLine();
+
+        Delay_700();
+    }
+
+    Notation();
+
+    Console.Write("What do you want: ");
+    string user_drinks_choise = Console.ReadLine();
+
+    Console.Write("How much do you want: ");
+    int user_drinks_quantity = Convert.ToByte(Console.ReadLine());
+
+    // $_пошук чи існує такий товар(cereals)
+    for (int x = 0; x < drinks_part.Length; x++)
+    {
+        if (user_drinks_choise == drinks_part[x])
+        {
+            Console.WriteLine("Great, let's continue");
+            break;
+        }
+        else if (user_drinks_choise != drinks_part[x])
+        {
+            continue;
+        }
+        else
+        {
+            Console.Write("What do you want: ");
+            user_drinks_choise = Console.ReadLine();
+        }
+    }
+
+    Clear_moment();
+    // =================================================================//
+
+    Console.Write("Your card numbers(16 digits): ");
+    Console.Write("$_");
+    string user_card_number = Console.ReadLine();
+
+    // $_перевірка чи пароль не довше за 16 цифр
+    while (user_card_number.Length != 16)
+    {
+        if (user_card_number.Length == 16)
+        {
+            break;
+        }
+        else
+        {
+            Console.Write("Your card numbers(16 digits): ");
+            user_card_number = Console.ReadLine();
+        }
+    }
+
+    Console.Write("Password(4 digits!!!): ");
+    string user_card_password = Console.ReadLine();
+
+    // $_перевірка чи пароль не довше за 4 цифри
+    while (user_card_password.Length != 4)
+    {
+        if (user_card_password.Length == 4)
+        {
+            break;
+        }
+        else
+        {
+            Console.Write("Password(4 digits!!!): ");
+            user_card_password = Console.ReadLine();
+        }
+    }
+
+    Console.Write("CVC2: ");
+    string user_card_cvc2 = Console.ReadLine();
+
+    // $_перевірка чи пароль не довше за 3 цифри
+    while (user_card_cvc2.Length != 3)
+    {
+        if (user_card_cvc2.Length == 3)
+        {
+            break;
+        }
+        else
+        {
+            Console.Write("CVC2: ");
+            user_card_cvc2 = Console.ReadLine();
+        }
+    }
+
+    Clear_moment();
+
+    // $_чек
+    Console.WriteLine("Here's your check");
+
+    Console.WriteLine($"$_{user_cereal_choise}");
+
+    Console.WriteLine($"$_{user_fruit_choise}");
+    
+    Console.WriteLine($"$_{user_drinks_choise}");
+
+
+    Clear_moment();
+
+    // $_методи
+
+    void Delay_700()
+    {
+        Thread.Sleep(700);
+    }
+
+    void Notation()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Console.Write("= ");
+            Thread.Sleep(200);
+        }
+        Console.WriteLine();
+    }
+   
+    void Clear_moment()
+    {
+        Console.ReadKey();
+        Console.Clear();
+    }
+}
